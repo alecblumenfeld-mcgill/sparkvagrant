@@ -17,7 +17,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 71,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
@@ -50,19 +50,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 72,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "<class 'pyspark.rdd.RDD'>\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "wordsList = ['cat', 'elephant', 'rat', 'rat', 'cat']\n",
     "wordsRDD = sc.parallelize(wordsList, 4)\n",
@@ -81,19 +73,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 73,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "cats\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TODO: Replace <FILL IN> with appropriate code\n",
     "def makePlural(word):\n",
@@ -109,26 +93,18 @@
     "    Returns:\n",
     "        str: A string with 's' added to it.\n",
     "    \"\"\"\n",
-    "    return word + 's'\n",
+    "    return <FILL IN>\n",
     "\n",
     "print makePlural('cat')"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 74,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "cats\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# One way of completing the function\n",
     "def makePlural(word):\n",
@@ -139,19 +115,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 75,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "1 test passed.\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# Load in the testing code and check to see if your answer is correct\n",
     "# If incorrect it will report back '1 test failed' for each failed test\n",
@@ -171,40 +139,24 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 76,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "['cats', 'elephants', 'rats', 'rats', 'cats']\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TODO: Replace <FILL IN> with appropriate code\n",
-    "pluralRDD = wordsRDD.map(makePlural)\n",
+    "pluralRDD = wordsRDD.map(<FILL IN>)\n",
     "print pluralRDD.collect()"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 77,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "1 test passed.\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TEST Apply makePlural to the base RDD(1c)\n",
     "Test.assertEquals(pluralRDD.collect(), ['cats', 'elephants', 'rats', 'rats', 'cats'],\n",
@@ -221,40 +173,24 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 78,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "['cats', 'elephants', 'rats', 'rats', 'cats']\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TODO: Replace <FILL IN> with appropriate code\n",
-    "pluralLambdaRDD = wordsRDD.map(lambda x : x+'s')\n",
+    "pluralLambdaRDD = wordsRDD.map(lambda <FILL IN>)\n",
     "print pluralLambdaRDD.collect()"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 79,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "1 test passed.\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TEST Pass a lambda function to map (1d)\n",
     "Test.assertEquals(pluralLambdaRDD.collect(), ['cats', 'elephants', 'rats', 'rats', 'cats'],\n",
@@ -271,42 +207,26 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 80,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "[4, 9, 4, 4, 4]\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TODO: Replace <FILL IN> with appropriate code\n",
     "pluralLengths = (pluralRDD\n",
-    "                 .map(lambda x : len(x))\n",
+    "                 <FILL IN>\n",
     "                 .collect())\n",
     "print pluralLengths"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 81,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "1 test passed.\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TEST Length of each word (1e)\n",
     "Test.assertEquals(pluralLengths, [4, 9, 4, 4, 4],\n",
@@ -324,40 +244,24 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 82,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "[('cat', 1), ('elephant', 1), ('rat', 1), ('rat', 1), ('cat', 1)]\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TODO: Replace <FILL IN> with appropriate code\n",
-    "wordPairs = wordsRDD.map(lambda x : (x,1))\n",
+    "wordPairs = wordsRDD.<FILL IN>\n",
     "print wordPairs.collect()"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 83,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "1 test passed.\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TEST Pair RDDs (1f)\n",
     "Test.assertEquals(wordPairs.collect(),\n",
@@ -394,44 +298,26 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 84,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "rat: [1, 1]\n",
-      "elephant: [1]\n",
-      "cat: [1, 1]\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TODO: Replace <FILL IN> with appropriate code\n",
     "# Note that groupByKey requires no parameters\n",
-    "wordsGrouped = wordPairs.groupByKey()\n",
+    "wordsGrouped = wordPairs.<FILL IN>\n",
     "for key, value in wordsGrouped.collect():\n",
     "    print '{0}: {1}'.format(key, list(value))"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 85,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "1 test passed.\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TEST groupByKey() approach (2a)\n",
     "Test.assertEquals(sorted(wordsGrouped.mapValues(lambda x: list(x)).collect()),\n",
@@ -450,40 +336,24 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 86,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "[('rat', 2), ('elephant', 1), ('cat', 2)]\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TODO: Replace <FILL IN> with appropriate code\n",
-    "wordCountsGrouped = wordsGrouped.map(lambda (x,y) : (x,sum(y)) )\n",
+    "wordCountsGrouped = wordsGrouped.<FILL IN>\n",
     "print wordCountsGrouped.collect()"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 87,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "1 test passed.\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TEST Use groupByKey() to obtain the counts (2b)\n",
     "Test.assertEquals(sorted(wordCountsGrouped.collect()),\n",
@@ -501,41 +371,25 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 88,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "[('rat', 2), ('elephant', 1), ('cat', 2)]\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TODO: Replace <FILL IN> with appropriate code\n",
     "# Note that reduceByKey takes in a function that accepts two values and returns a single value\n",
-    "wordCounts = wordPairs.reduceByKey(lambda x , y : x+y)\n",
+    "wordCounts = wordPairs.reduceByKey(<FILL IN>)\n",
     "print wordCounts.collect()"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 89,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "1 test passed.\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TEST Counting using reduceByKey (2c)\n",
     "Test.assertEquals(sorted(wordCounts.collect()), [('cat', 2), ('elephant', 1), ('rat', 2)],\n",
@@ -552,47 +406,26 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 90,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "[('rat', 2), ('elephant', 1), ('cat', 2)]\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TODO: Replace <FILL IN> with appropriate code\n",
     "wordCountsCollected = (wordsRDD\n",
-    "                       .map(lambda x : (x,1) )\n",
-    "                       .reduceByKey(lambda x,y: x+y)\n",
+    "                       <FILL IN>\n",
     "                       .collect())\n",
-    "wordCountsCollectedRDD = (wordsRDD\n",
-    "                       .map(lambda x : (x,1) )\n",
-    "                       .reduceByKey(lambda x,y: x+y)\n",
-    "                       )\n",
     "print wordCountsCollected"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 91,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "1 test passed.\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TEST All together (2d)\n",
     "Test.assertEquals(sorted(wordCountsCollected), [('cat', 2), ('elephant', 1), ('rat', 2)],\n",
@@ -616,40 +449,24 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 92,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "3\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TODO: Replace <FILL IN> with appropriate code\n",
-    "uniqueWords = len(wordCountsCollectedRDD.keys().collect())\n",
+    "uniqueWords = <FILL IN>\n",
     "print uniqueWords"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 93,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "1 test passed.\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TEST Unique words (3a)\n",
     "Test.assertEquals(uniqueWords, 3, 'incorrect count of uniqueWords')"
@@ -666,38 +483,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 94,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "ename": "Py4JJavaError",
-     "evalue": "An error occurred while calling z:org.apache.spark.api.python.PythonRDD.collectAndServe.\n: org.apache.spark.SparkException: Job aborted due to stage failure: Task 2 in stage 54.0 failed 1 times, most recent failure: Lost task 2.0 in stage 54.0 (TID 176, localhost): org.apache.spark.api.python.PythonException: Traceback (most recent call last):\n  File \"/usr/local/bin/spark-1.3.1-bin-hadoop2.6/python/pyspark/worker.py\", line 101, in main\n    process()\n  File \"/usr/local/bin/spark-1.3.1-bin-hadoop2.6/python/pyspark/worker.py\", line 96, in process\n    serializer.dump_stream(func(split_index, iterator), outfile)\n  File \"/usr/local/bin/spark-1.3.1-bin-hadoop2.6/python/pyspark/serializers.py\", line 236, in dump_stream\n    vs = list(itertools.islice(iterator, batch))\nTypeError: <lambda>() takes exactly 2 arguments (1 given)\n\n\tat org.apache.spark.api.python.PythonRDD$$anon$1.read(PythonRDD.scala:135)\n\tat org.apache.spark.api.python.PythonRDD$$anon$1.<init>(PythonRDD.scala:176)\n\tat org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:94)\n\tat org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:277)\n\tat org.apache.spark.rdd.RDD.iterator(RDD.scala:244)\n\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:61)\n\tat org.apache.spark.scheduler.Task.run(Task.scala:64)\n\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:203)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)\n\tat java.lang.Thread.run(Thread.java:745)\n\nDriver stacktrace:\n\tat org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:1204)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1193)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1192)\n\tat scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)\n\tat scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:47)\n\tat org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1192)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:693)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:693)\n\tat scala.Option.foreach(Option.scala:236)\n\tat org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:693)\n\tat org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1393)\n\tat org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1354)\n\tat org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:48)\n",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
-      "\u001b[1;31mPy4JJavaError\u001b[0m                             Traceback (most recent call last)",
-      "\u001b[1;32m<ipython-input-94-72b4b7d859c2>\u001b[0m in \u001b[0;36m<module>\u001b[1;34m()\u001b[0m\n\u001b[0;32m      5\u001b[0m               \u001b[1;31m#.reduce(lambda x,y : sum(x))\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m      6\u001b[0m              )\n\u001b[1;32m----> 7\u001b[1;33m \u001b[1;32mprint\u001b[0m \u001b[0mtotalCount\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mcollect\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m      8\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m      9\u001b[0m \u001b[1;31m#average = totalCount / float(uniqueWords)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n",
-      "\u001b[1;32m/usr/local/bin/spark-1.3.1-bin-hadoop2.6/python/pyspark/rdd.py\u001b[0m in \u001b[0;36mcollect\u001b[1;34m(self)\u001b[0m\n\u001b[0;32m    711\u001b[0m         \"\"\"\n\u001b[0;32m    712\u001b[0m         \u001b[1;32mwith\u001b[0m \u001b[0mSCCallSiteSync\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mself\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mcontext\u001b[0m\u001b[1;33m)\u001b[0m \u001b[1;32mas\u001b[0m \u001b[0mcss\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m--> 713\u001b[1;33m             \u001b[0mport\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0mself\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mctx\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0m_jvm\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mPythonRDD\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mcollectAndServe\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mself\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0m_jrdd\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mrdd\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m    714\u001b[0m         \u001b[1;32mreturn\u001b[0m \u001b[0mlist\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0m_load_from_socket\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mport\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mself\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0m_jrdd_deserializer\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m    715\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n",
-      "\u001b[1;32m/usr/local/bin/spark-1.3.1-bin-hadoop2.6/python/lib/py4j-0.8.2.1-src.zip/py4j/java_gateway.py\u001b[0m in \u001b[0;36m__call__\u001b[1;34m(self, *args)\u001b[0m\n\u001b[0;32m    536\u001b[0m         \u001b[0manswer\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0mself\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mgateway_client\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0msend_command\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mcommand\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m    537\u001b[0m         return_value = get_return_value(answer, self.gateway_client,\n\u001b[1;32m--> 538\u001b[1;33m                 self.target_id, self.name)\n\u001b[0m\u001b[0;32m    539\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m    540\u001b[0m         \u001b[1;32mfor\u001b[0m \u001b[0mtemp_arg\u001b[0m \u001b[1;32min\u001b[0m \u001b[0mtemp_args\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n",
-      "\u001b[1;32m/usr/local/bin/spark-1.3.1-bin-hadoop2.6/python/lib/py4j-0.8.2.1-src.zip/py4j/protocol.py\u001b[0m in \u001b[0;36mget_return_value\u001b[1;34m(answer, gateway_client, target_id, name)\u001b[0m\n\u001b[0;32m    298\u001b[0m                 raise Py4JJavaError(\n\u001b[0;32m    299\u001b[0m                     \u001b[1;34m'An error occurred while calling {0}{1}{2}.\\n'\u001b[0m\u001b[1;33m.\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m--> 300\u001b[1;33m                     format(target_id, '.', name), value)\n\u001b[0m\u001b[0;32m    301\u001b[0m             \u001b[1;32melse\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m    302\u001b[0m                 raise Py4JError(\n",
-      "\u001b[1;31mPy4JJavaError\u001b[0m: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.collectAndServe.\n: org.apache.spark.SparkException: Job aborted due to stage failure: Task 2 in stage 54.0 failed 1 times, most recent failure: Lost task 2.0 in stage 54.0 (TID 176, localhost): org.apache.spark.api.python.PythonException: Traceback (most recent call last):\n  File \"/usr/local/bin/spark-1.3.1-bin-hadoop2.6/python/pyspark/worker.py\", line 101, in main\n    process()\n  File \"/usr/local/bin/spark-1.3.1-bin-hadoop2.6/python/pyspark/worker.py\", line 96, in process\n    serializer.dump_stream(func(split_index, iterator), outfile)\n  File \"/usr/local/bin/spark-1.3.1-bin-hadoop2.6/python/pyspark/serializers.py\", line 236, in dump_stream\n    vs = list(itertools.islice(iterator, batch))\nTypeError: <lambda>() takes exactly 2 arguments (1 given)\n\n\tat org.apache.spark.api.python.PythonRDD$$anon$1.read(PythonRDD.scala:135)\n\tat org.apache.spark.api.python.PythonRDD$$anon$1.<init>(PythonRDD.scala:176)\n\tat org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:94)\n\tat org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:277)\n\tat org.apache.spark.rdd.RDD.iterator(RDD.scala:244)\n\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:61)\n\tat org.apache.spark.scheduler.Task.run(Task.scala:64)\n\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:203)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)\n\tat java.lang.Thread.run(Thread.java:745)\n\nDriver stacktrace:\n\tat org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:1204)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1193)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1192)\n\tat scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)\n\tat scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:47)\n\tat org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1192)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:693)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:693)\n\tat scala.Option.foreach(Option.scala:236)\n\tat org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:693)\n\tat org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1393)\n\tat org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1354)\n\tat org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:48)\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TODO: Replace <FILL IN> with appropriate code\n",
     "from operator import add\n",
     "totalCount = (wordCounts\n",
-    "              .map(lambda x,y:y)\n",
-    "              #.reduce(lambda x,y : sum(x))\n",
-    "             )\n",
-    "print totalCount.collect()\n",
-    "\n",
-    "#average = totalCount / float(uniqueWords)\n",
-    "#print totalCount\n",
-    "#print round(average, 2)"
+    "              .map(<FILL IN>)\n",
+    "              .reduce(<FILL IN>))\n",
+    "average = totalCount / float(<FILL IN>)\n",
+    "print totalCount\n",
+    "print round(average, 2)"
    ]
   },
   {
@@ -736,19 +535,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 95,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "[('rat', 2), ('elephant', 1), ('cat', 2)]\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TODO: Replace <FILL IN> with appropriate code\n",
     "def wordCount(wordListRDD):\n",
@@ -760,25 +551,17 @@
     "    Returns:\n",
     "        RDD of (str, int): An RDD consisting of (word, count) tuples.\n",
     "    \"\"\"\n",
-    "    return wordListRDD.map(lambda x : (x,1)).reduceByKey(lambda x , y : x+y)\n",
+    "    <FILL IN>\n",
     "print wordCount(wordsRDD).collect()"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 96,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "1 test passed.\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TEST wordCount function (4a)\n",
     "Test.assertEquals(sorted(wordCount(wordsRDD).collect()),\n",
@@ -802,26 +585,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 100,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "hi you\n",
-      "no under score\n",
-      "the elephants 4 cats\n",
-      "remove punctuation then spaces\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TODO: Replace <FILL IN> with appropriate code\n",
     "import re\n",
-    "import string\n",
     "def removePunctuation(text):\n",
     "    \"\"\"Removes punctuation, changes to lower case, and strips leading and trailing spaces.\n",
     "\n",
@@ -836,41 +607,19 @@
     "    Returns:\n",
     "        str: The cleaned up string.\n",
     "    \"\"\"\n",
-    "    toRet = text.replace(\"'\", \"\")\n",
-    "\n",
-    "    toRet = re.split('\\W+', toRet)\n",
-    "    toRet = \" \".join(toRet)\n",
-    "    \n",
-    "    toRet = re.sub('[^A-Za-z0-9]+', ' ', toRet)\n",
-    "        \n",
-    "    toRet = re.sub('^ +','',toRet)\n",
-    "    toRet = toRet.rstrip()\n",
-    "        \n",
-    "   \n",
-    "\n",
-    "        \n",
-    "    return  toRet.lower()\n",
+    "    <FILL IN>\n",
     "print removePunctuation('Hi, you!')\n",
     "print removePunctuation(' No under_score!')\n",
-    "print removePunctuation(\" The Elephant's 4 cats. \")\n",
     "print removePunctuation(' *      Remove punctuation then spaces  * ')"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 101,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "1 test passed.\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TEST Capitalization and punctuation (4b)\n",
     "Test.assertEquals(removePunctuation(\" The Elephant's 4 cats. \"),\n",
@@ -888,37 +637,15 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 102,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "0: 1609\n",
-      "1: \n",
-      "2: the sonnets\n",
-      "3: \n",
-      "4: by william shakespeare\n",
-      "5: \n",
-      "6: \n",
-      "7: \n",
-      "8: 1\n",
-      "9: from fairest creatures we desire increase\n",
-      "10: that thereby beautys rose might never die\n",
-      "11: but as the riper should by time decease\n",
-      "12: his tender heir might bear his memory\n",
-      "13: but thou contracted to thine own bright eyes\n",
-      "14: feedst thy lights flame with self substantial fuel\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# Just run this code\n",
     "import os.path\n",
-    "baseDir = os.path.join('../data')\n",
+    "baseDir = os.path.join('data')\n",
     "inputPath = os.path.join('cs100', 'lab1', 'shakespeare.txt')\n",
     "fileName = os.path.join(baseDir, inputPath)\n",
     "\n",
@@ -945,23 +672,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 124,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "[u'zwaggerd', u'zounds', u'zounds', u'zounds', u'zounds']\n",
-      "897301\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TODO: Replace <FILL IN> with appropriate code\n",
-    "shakespeareWordsRDD = shakespeareRDD.flatMap(lambda x: x.split(' '))\n",
+    "shakespeareWordsRDD = shakespeareRDD.<FILL_IN>\n",
     "shakespeareWordCount = shakespeareWordsRDD.count()\n",
     "print shakespeareWordsRDD.top(5)\n",
     "print shakespeareWordCount"
@@ -969,20 +687,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 125,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "1 test failed. incorrect value for shakespeareWordCount\n",
-      "1 test passed.\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TEST Words from lines (4d)\n",
     "# This test allows for leading spaces to be removed either before or after\n",
@@ -1004,41 +713,25 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 126,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "897301\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TODO: Replace <FILL IN> with appropriate code\n",
-    "shakeWordsRDD = shakespeareWordsRDD.filter(lambda x: x !=' ')\n",
+    "shakeWordsRDD = shakespeareWordsRDD.<FILL_IN>\n",
     "shakeWordCount = shakeWordsRDD.count()\n",
     "print shakeWordCount"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 127,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "1 test failed. incorrect value for shakeWordCount\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TEST Remove empty elements (4e)\n",
     "Test.assertEquals(shakeWordCount, 882996, 'incorrect value for shakeWordCount')"
@@ -1056,20 +749,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 128,
+   "execution_count": null,
    "metadata": {
     "collapsed": false
    },
-   "outputs": [
-    {
-     "ename": "SyntaxError",
-     "evalue": "invalid syntax (<ipython-input-128-4a3eae043ad6>, line 2)",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[1;36m  File \u001b[1;32m\"<ipython-input-128-4a3eae043ad6>\"\u001b[1;36m, line \u001b[1;32m2\u001b[0m\n\u001b[1;33m    top15WordsAndCounts = <FILL IN>\u001b[0m\n\u001b[1;37m                          ^\u001b[0m\n\u001b[1;31mSyntaxError\u001b[0m\u001b[1;31m:\u001b[0m invalid syntax\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "# TODO: Replace <FILL IN> with appropriate code\n",
     "top15WordsAndCounts = <FILL IN>\n",
@@ -1093,25 +777,7 @@
    ]
   }
  ],
- "metadata": {
-  "kernelspec": {
-   "display_name": "Python 2",
-   "language": "python",
-   "name": "python2"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 2
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython2",
-   "version": "2.7.6"
-  }
- },
+ "metadata": {},
  "nbformat": 4,
  "nbformat_minor": 0
 }
