@@ -1,1 +1,1 @@
-{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/alec/sparkvagrant","disabled":false},"/labFiles":{"guestpath":"/labFiles","hostpath":"/Users/alec/sparkvagrant/src","disabled":false},"/home/vagrant/labFiles":{"guestpath":"/home/vagrant/labFiles","hostpath":"/Users/alec/sparkvagrant/src","disabled":false}}}
+{"virtualbox":{"/home/vagrant/labFiles":{"guestpath":"/home/vagrant/labFiles","hostpath":"/Users/alec/sparkvagrant/src","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/alec/sparkvagrant","disabled":false}}}
